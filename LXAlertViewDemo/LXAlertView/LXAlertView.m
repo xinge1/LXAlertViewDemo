@@ -53,6 +53,7 @@
         _alertView=[[UIView alloc] init];
         _alertView.backgroundColor=[UIColor whiteColor];
         _alertView.layer.cornerRadius=6.0;
+        _alertView.layer.masksToBounds=YES;
         _alertView.userInteractionEnabled=YES;
         
         
@@ -206,7 +207,7 @@
             
             //damping:阻尼，范围0-1，阻尼越接近于0，弹性效果越明显
             //velocity:弹性复位的速度
-            [UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:.4 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
                 _alertView.layer.position=self.center;
                 
             } completion:^(BOOL finished) {
@@ -222,7 +223,7 @@
             
             //damping:阻尼，范围0-1，阻尼越接近于0，弹性效果越明显
             //velocity:弹性复位的速度
-            [UIView animateWithDuration:1.0 delay:0 usingSpringWithDamping:.4 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+            [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
                 _alertView.layer.position=self.center;
                 
             } completion:^(BOOL finished) {
