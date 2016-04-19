@@ -176,11 +176,6 @@
 -(void)setShowAnimation{
     
     switch (_animationStyle) {
-        case LXASAnimationNO:{
-            
-        }
-            
-            break;
             
         case LXASAnimationDefault:
         {
@@ -234,6 +229,12 @@
                 
             }];
         }
+            break;
+            
+        case LXASAnimationNO:{
+            
+        }
+            
             break;
             
         default:
