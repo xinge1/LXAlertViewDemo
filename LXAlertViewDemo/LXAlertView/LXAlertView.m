@@ -155,6 +155,8 @@
 
 -(void)showLXAlertView{
     
+    
+    
     _alertWindow=[[UIWindow alloc] initWithFrame:MainScreenRect];
     _alertWindow.windowLevel=UIWindowLevelAlert;
     [_alertWindow becomeKeyWindow];
@@ -162,11 +164,87 @@
     
     [_alertWindow addSubview:self];
     
+    [self setShowAnimation];
+    
 }
 
 -(void)dismissAlertView{
     [self removeFromSuperview];
     [_alertWindow resignKeyWindow];
+}
+
+-(void)setShowAnimation{
+    
+    switch (_animationStyle) {
+        case LXASAnimationNO:{
+            
+        }
+            
+            break;
+            
+        case LXASAnimationDefault:
+        {
+            [UIView animateWithDuration:0 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                [_alertView.layer setValue:@(0) forKeyPath:@"transform.scale"];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.23 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                    [_alertView.layer setValue:@(1.2) forKeyPath:@"transform.scale"];
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:0.09 delay:0.02 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                        [_alertView.layer setValue:@(.9) forKeyPath:@"transform.scale"];
+                    } completion:^(BOOL finished) {
+                        [UIView animateWithDuration:0.05 delay:0.02 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                            [_alertView.layer setValue:@(1.0) forKeyPath:@"transform.scale"];
+                        } completion:^(BOOL finished) {
+                            
+                        }];
+                    }];
+                }];
+            }];
+        }
+            break;
+            
+        case LXASAnimationLeftShake:{
+    
+            CGPoint startPoint = CGPointMake(-AlertView_W, self.center.y);
+            _alertView.layer.position=startPoint;
+            
+            //damping:阻尼，范围0-1，阻尼越接近于0，弹性效果越明显
+            //velocity:弹性复位的速度
+            [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.4 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                _alertView.layer.position=self.center;
+                
+            } completion:^(BOOL finished) {
+                
+            }];
+        }
+            break;
+            
+        case LXASAnimationTopShake:{
+            
+            CGPoint startPoint = CGPointMake(self.center.x, -_alertView.frame.size.height);
+            _alertView.layer.position=startPoint;
+            
+            //damping:阻尼，范围0-1，阻尼越接近于0，弹性效果越明显
+            //velocity:弹性复位的速度
+            [UIView animateWithDuration:.8 delay:0 usingSpringWithDamping:.4 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveLinear animations:^{
+                _alertView.layer.position=self.center;
+                
+            } completion:^(BOOL finished) {
+                
+            }];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+-(void)setAnimationStyle:(LXAShowAnimationStyle)animationStyle{
+    _animationStyle=animationStyle;
 }
 
 @end

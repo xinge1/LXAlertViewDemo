@@ -32,6 +32,8 @@
         NSLog(@"点击index====%ld",clickIndex);
     }];
     //alert.dontDissmiss=YES;
+    //设置动画类型
+//    alert.animationStyle=LXASAnimationTopShake;
     [alert showLXAlertView];
     
 }

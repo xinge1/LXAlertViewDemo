@@ -138,9 +138,7 @@
     
     //计算方法二
     CGSize maximumLabelSize = CGSizeMake(maxWidth, MAXFLOAT);//labelsize的最大值
-    //关键语句
     CGSize expectSize = [self sizeThatFits:maximumLabelSize];
-    NSLog(@"size---%@",NSStringFromCGSize(expectSize));
     return expectSize;
 }
 

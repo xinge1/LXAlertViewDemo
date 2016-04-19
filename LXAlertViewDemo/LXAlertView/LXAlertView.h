@@ -6,13 +6,24 @@
 //  Copyright © 2016年 liuxin. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger , LXAShowAnimationStyle) {
+    LXASAnimationDefault    = 0,
+    LXASAnimationLeftShake  ,
+    LXASAnimationTopShake   ,
+    LXASAnimationNO         ,
+};
+
 typedef void(^LXAlertClickIndexBlock)(NSInteger clickIndex);
+
 
 @interface LXAlertView : UIView
 
 @property (nonatomic,copy)LXAlertClickIndexBlock clickBlock;
+
+@property (nonatomic,assign)LXAShowAnimationStyle animationStyle;
 
 /**
  *  初始化alert方法（根据内容自适应大小，目前只支持1个按钮或2个按钮）
