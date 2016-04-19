@@ -34,17 +34,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDT-VE-4lh">
-                                <rect key="frame" x="117" y="150" width="100" height="30"/>
+                                <rect key="frame" x="105" y="150" width="100" height="30"/>
                                 <state key="normal" title="systemAlert"/>
                                 <connections>
                                     <action selector="systemAlertClick:" destination="Eu9-bg-uyQ" eventType="touchUpInside" id="wSR-Hn-5y3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UR-U2-qM9">
-                                <rect key="frame" x="117" y="216" width="74" height="30"/>
-                                <state key="normal" title="myAlert"/>
+                                <rect key="frame" x="105" y="216" width="98" height="30"/>
+                                <state key="normal" title="myAlert动画一"/>
                                 <connections>
                                     <action selector="myAlertClick:" destination="Eu9-bg-uyQ" eventType="touchUpInside" id="AzF-dF-tS1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-di-i7A">
+                                <rect key="frame" x="105" y="274" width="98" height="30"/>
+                                <state key="normal" title="myAlert动画二"/>
+                                <connections>
+                                    <action selector="animation2:" destination="Eu9-bg-uyQ" eventType="touchUpInside" id="Xyr-3I-Wwa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwD-7g-tki">
+                                <rect key="frame" x="105" y="336" width="98" height="30"/>
+                                <state key="normal" title="myAlert动画三"/>
+                                <connections>
+                                    <action selector="animation3:" destination="Eu9-bg-uyQ" eventType="touchUpInside" id="oSL-eN-eB0"/>
                                 </connections>
                             </button>
                         </subviews>

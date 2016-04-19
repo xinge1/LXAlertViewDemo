@@ -11,7 +11,6 @@
 
 @interface ViewController ()<UIAlertViewDelegate>
 
-
 @end
 
 @implementation ViewController
@@ -28,14 +27,29 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)myAlertClick:(id)sender {
+   
     LXAlertView *alert=[[LXAlertView alloc] initWithTitle:@"提示" message:@"自定义alertview,可以自动适应文字内容。" cancelBtnTitle:@"取消" otherBtnTitle:@"确定" clickIndexBlock:^(NSInteger clickIndex) {
         NSLog(@"点击index====%ld",clickIndex);
     }];
     //alert.dontDissmiss=YES;
-    //设置动画类型
-//    alert.animationStyle=LXASAnimationTopShake;
+    //设置动画类型(默认是缩放)
+    //_alert.animationStyle=LXASAnimationTopShake;
     [alert showLXAlertView];
     
+}
+- (IBAction)animation2:(id)sender {
+    LXAlertView *alert=[[LXAlertView alloc] initWithTitle:@"提示" message:@"自定义alertview,可以自动适应文字内容。" cancelBtnTitle:@"取消" otherBtnTitle:@"确定" clickIndexBlock:^(NSInteger clickIndex) {
+        NSLog(@"点击index====%ld",clickIndex);
+    }];
+    alert.animationStyle=LXASAnimationTopShake;
+    [alert showLXAlertView];
+}
+- (IBAction)animation3:(id)sender {
+    LXAlertView *alert=[[LXAlertView alloc] initWithTitle:@"提示" message:@"自定义alertview,可以自动适应文字内容。" cancelBtnTitle:@"取消" otherBtnTitle:@"确定" clickIndexBlock:^(NSInteger clickIndex) {
+        NSLog(@"点击index====%ld",clickIndex);
+    }];
+    alert.animationStyle=LXASAnimationLeftShake;
+    [alert showLXAlertView];
 }
 
 - (IBAction)systemAlertClick:(id)sender {
