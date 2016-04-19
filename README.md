@@ -23,3 +23,4 @@
     [alert showLXAlertView];
 
 ```
+![简书地址](http://www.jianshu.com/p/8706725bcc8a)
